@@ -1,0 +1,61 @@
+a {
+    color: rgb(246, 246, 19);
+
+}
+
+h1 {
+    color: mintcream;
+}
+
+body {
+    background-color: rgb(11, 97, 177);
+}
+
+h2 {
+    color: beige;
+}
+
+p {
+    color: rgb(6, 23, 38);
+    font-size: 2rem;
+}
+
+header {
+    text-align: center;
+}
+.comtainer{
+    align-items: center;
+}
+img {
+    align-items: center;
+    height: auto;
+    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+h3{
+    color: rgb(164, 143, 20);
+    text-shadow: -2px -2px 0 rgb(7, 18, 13);
+}
+h4{
+    color:white;
+    font-size: 2rem;
+}
+.about-page h3{
+color: white;
+text-shadow: none;
+text-decoration: underline;
+font-size: 2rem;
+}
+.about-page p {
+    color: rgb(0, 0, 0);
+
+    font-size: 2rem;   }
+    .menu-class p{
+        text-align: center;
+    }
+        .menu-class h4 {
+            text-align: center;
+        }
