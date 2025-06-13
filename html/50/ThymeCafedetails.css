@@ -23,9 +23,11 @@ p {
 header {
     text-align: center;
 }
-.comtainer{
+
+.comtainer {
     align-items: center;
 }
+
 img {
     align-items: center;
     height: auto;
@@ -35,28 +37,35 @@ img {
     margin-right: auto;
 
 }
-h3{
+
+h3 {
     color: rgb(164, 143, 20);
     text-shadow: -2px -2px 0 rgb(7, 18, 13);
     text-align: center;
 }
-h4{
-    color:white;
+
+h4 {
+    color: white;
     font-size: 2rem;
 }
-.about-page h3{
-color: white;
-text-shadow: none;
-text-decoration: underline;
-font-size: 2rem;
+
+.about-page h3 {
+    color: white;
+    text-shadow: none;
+    text-decoration: underline;
+    font-size: 2rem;
 }
+
 .about-page p {
     color: rgb(0, 0, 0);
 
-    font-size: 2rem;   }
-    .menu-class p{
-        text-align: center;
-    }
-        .menu-class h4 {
-            text-align: center;
-        }
+    font-size: 2rem;
+}
+
+.menu-class p {
+    text-align: center;
+}
+
+.menu-class h4 {
+    text-align: center;
+}
