@@ -38,6 +38,7 @@ img {
 h3{
     color: rgb(164, 143, 20);
     text-shadow: -2px -2px 0 rgb(7, 18, 13);
+    text-align: center;
 }
 h4{
     color:white;
