@@ -1,0 +1,81 @@
+a {
+    color: rgb(246, 246, 19);
+    text-decoration: none;
+
+}
+a:hover{
+    color:gold;
+    text-decoration: underline;
+
+}
+
+h1 {
+    color: mintcream;
+    font-size: 3em;
+}
+
+body {
+    background-color: steelblue;
+}
+
+h2 {
+    color: beige;
+    font-size: 2em;
+    font-style: italic;
+}
+
+p {
+    color: rgb(6, 23, 38);
+    font-size: 2rem;
+}
+
+header {
+    text-align: center;
+}
+
+.comtainer {
+    align-items: center;
+}
+
+img {
+    align-items: center;
+    height: auto;
+    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+
+}
+
+h3 {
+    color: rgb(164, 143, 20);
+    text-shadow: -2px -2px 0 rgb(7, 18, 13);
+    text-align: center;
+}
+
+h4 {
+    color: white;
+    font-size: 2rem;
+}
+
+.about-page h3 {
+    color: white;
+    text-shadow: none;
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
+#aboutp {
+    color: rgb(0, 0, 0);
+
+    font-size: 2rem;
+}
+
+.menu-class p {
+    text-align: center;
+}
+
+.menu-class h4 {
+    text-align: center;
+}
