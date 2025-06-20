@@ -1,0 +1,63 @@
+h3 {
+    text-shadow: none;
+    color: black;
+    font-weight: normal;
+    font-size: 2em;
+
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+#lunchMenu {
+    margin-left: 30%;
+    margin-right: 30%;
+
+
+}
+
+.horizontal-line {
+    border: none;
+    height: 1px;
+    background-color: black;
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-bottom: 5em;
+}
+
+.menu-item {
+    text-shadow: none;
+    color: black;
+    font-weight: normal;
+    font-size: 2em;
+    vertical-align: auto;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+img {
+
+    box-shadow: 4px 4px 4px rgb(71, 70, 70);
+
+}
+img:hover {
+    scale: 1.5;
+}
+ul {
+    text-align: left;
+    text-transform: capitalize;
+    font-family: 'Franklin Gothic Narrow';
+    letter-spacing: 3.5px;
+    font-weight: Bold;
+    list-style: circle;
+    translate: -3px;
+    line-height: 32px;
+    transform: skew(10deg);
+    font-size: 2em;
+}
+a:hover{
+    color:navy
+
+}
