@@ -1,0 +1,20 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
+
+.abt-thyme {
+    padding: 1em 15px;
+    text-align: justify;
+    
+}
+
+.abt-thyme img {
+    float: left;
+
+    margin: 1em;
+    border-radius: 25px;
+    max-width: 40%;
+
+}
+
+.clear-fix {
+    clear: both;
+}

@@ -1,21 +1,21 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
 
+.abt-thyme {
+    padding: 1em 15px;
+    text-align: justify;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
-.abt-thyme{
-
-    margin-bottom: .5em;
-    border-radius: 8px;
-    overflow: auto;
 }
 
-
-
 .abt-thyme img {
-    float: right;
-    padding: 1em;
+    float: left;
+
+    margin: 1em;
     border-radius: 25px;
+    max-width: 40%;
+
 }
 
 .clear-fix {
-    clear: left
+    clear: both;
 }
