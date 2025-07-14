@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .circle {
+                height: 25px;
+                width: 25px;
+                background-color: black;
+                border-radius: 50%;
+                display: grid;
+                justify-self: center;
+                align-self: center;
+            }
+
+            div {
+                display: grid;
+                border: 1px solid black;
+                width: 100%;
+
+                max-width: 250px;
+                height: 250px;
+
+
+
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas:
+                    "topLeft topCenter topRight"
+                    " . center ."
+                    "bottomLeft bottomCenter bottomRight";
+            }
+
+
+
+            .top-left {
+                grid-area: topLeft;
+            }
+
+            .top-center {
+                grid-area: topCenter;
+            }
+
+            .top-right {
+                grid-area: topRight;
+            }
+
+
+
+            .center {
+                grid-area: center;
+            }
+
+
+            .bottom-left {
+                grid-area: bottomLeft;
+            }
+
+            .bottom-center {
+                grid-area: bottomCenter;
+            }
+
+            .bottom-right {
+                grid-area: bottomRight;
+            }
+
+
+
+
+
+            body {
+                display: grid;
+                grid-template-areas:
+                    'one two'
+                    'three four'
+                    'five six';
+
+                gap: .5em;
+
+                justify-content: center;
+                grid-template-columns: repeat(2, 350px);
+                margin: 100px;
+            }
+
+            .one {
+                grid-area: one;
+            }
+
+            .two {
+                grid-area: two;
+            }
+
+            .three {
+                grid-area: three;
+            }
+
+            .four {
+                grid-area: four;
+            }
+
+            .five {
+                grid-area: five;
+            }
+
+            .six {
+                grid-area: six;
+            }
+
+
+            @media (width<=700px) {
+                body {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas:
+                        'one two'
+                        'three four'
+                        'five six';
+                    margin: 20px;
+                    gap: 1em;
+                }
+
+                div {
+                    max-width: 100%;
+                    width: 100%;
+                }
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="one">
+            <span class=" circle center"></span>
+        </div>
+
+        <div class="two">
+            <span class="circle top-left"></span>
+            <span class="circle bottom-right"></span>
+        </div>
+
+        <div class="three">
+            <span class="circle top-left"></span>
+            <span class="circle center"></span>
+            <span class="circle bottom-right"></span>
+        </div>
+
+        <div class="four">
+            <span class="circle top-left"></span>
+            <span class="circle top-right"></span>
+            <span class="circle bottom-left"></span>
+            <span class="circle bottom-right"></span>
+        </div>
+
+        <div class="five">
+            <span class="circle top-left"></span>
+            <span class="circle top-right"></span>
+            <span class="circle bottom-left"></span>
+            <span class="circle bottom-right"></span>
+            <span class="circle center"></span>
+
+        </div>
+
+        <div class="six">
+            <span class="circle top-right"></span>
+            <span class="circle top-center"></span>
+            <span class="circle top-left"></span>
+            <span class="circle bottom-right"></span>
+            <span class="circle bottom-center"></span>
+            <span class="circle bottom-left"></span>
+        </div>
+
+
+
+    </body>
+
+</html>
