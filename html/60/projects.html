@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects</title>
+        <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css" />
+
+        <style>
+            img {
+                width: 500px;
+            }
+
+            .thyme {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+
+            }
+
+            .about {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section div {
+                margin-top: 100px;
+            }
+
+            .project-header {
+                margin-top: 200px;
+            }
+
+            @media(width>=800px) {
+                img {
+                    width: 1000px;
+                }
+
+                .thyme {
+                    flex-direction: row;
+                    align-items: center;
+                }
+
+                ;
+            }
+        </style>
+
+    </head>
+
+    <body class="mt-5 ms-5">
+
+        <nav class="navbar navbar-* navbar-expand-lg bg-body-tertiary  fixed-top">
+            <a class="navbar-brand" href="#">
+                <img src="ER.png" alt="" class="img-fluid" style="max-width: 85px;">
+            </a>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#theNavbar"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="theNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div class="container text-center fs-1 fw-bold project-header">
+            Projects:
+        </div>
+
+<hr class="featurette-divider">
+
+        <section class="projects">
+            <div class="thyme">
+                <img class="firstImg" src="thymeCafe.jpg" alt="Thyme Cafe website ">
+                <span class="about">
+                    <h2 class="mt-4">Thyme Cafe</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis expedita optio quis eaque
+                        exercitationem porro ullam nostrum ab dignissimos architecto impedit, dolorem ipsam, voluptatum
+                        officiis cumque magnam, placeat voluptate esse.</p>
+                </span>
+
+            </div>
+
+
+
+            <div class="thyme">
+                <img src="thymeCafe.jpg" alt="Thyme Cafe website ">
+                <span class="about">
+                    <h2 class="mt-4">Thyme Cafe</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quaerat repellendus doloribus
+                        saepe
+                        aliquid, sunt quae inventore, qui ipsam fuga labore assumenda dicta itaque aspernatur laudantium
+                        nobis obcaecati nemo rerum.</p>
+                </span>
+
+            </div>
+
+
+            <div class="thyme">
+                <img src="thymeCafe.jpg" alt="Thyme Cafe website ">
+                <span class="about">
+                    <h2 class="mt-4">Thyme Cafe</h2>
+                    <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolor doloremque,
+                        molestias velit
+                        quidem debitis aperiam harum architecto corporis praesentium. Corporis in dolorum modi
+                        voluptatibus
+                        totam consectetur unde animi debitis?</p>
+                </span>
+
+            </div>
+
+
+        </section>
+
+<hr class="featurette-divider">
+        <footer class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <span> &copy; ERosenbaum 2025</span>
+                    <span class="ms-3">etarosenbaum@gmail.com</span>
+                </div>
+                <div>
+                    <a href="#">Back to top</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="bootstrap-5.3.7-dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+
+</html>
