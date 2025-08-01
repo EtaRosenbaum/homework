@@ -8,6 +8,12 @@
         <link rel="stylesheet" href="bootstrap-5.3.7-dist/css/bootstrap.min.css" />
 
         <style>
+            html {
+                scroll-padding-top: 3em;
+                scroll-behavior: smooth;
+            }
+
+
             img {
                 width: 500px;
             }
@@ -30,17 +36,23 @@
             }
 
             .project-header {
-                margin-top: 200px;
+                margin-top: 150px;
+            }
+
+            .carousel {
+                width: 500px;
             }
 
             @media(width>=800px) {
                 img {
-                    width: 1000px;
+                    width: 900px;
                 }
 
                 .thyme {
                     flex-direction: row;
                     align-items: center;
+                    text-align: left;
+                    padding-right: 25px;
                 }
 
                 ;
@@ -49,11 +61,11 @@
 
     </head>
 
-    <body class="mt-5 ms-5">
+    <body class=" ">
 
         <nav class="navbar navbar-* navbar-expand-lg bg-body-tertiary  fixed-top">
-            <a class="navbar-brand" href="#">
-                <img src="ER.png" alt="" class="img-fluid" style="max-width: 85px;">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/ER.png" alt="" class="img-fluid" style="max-width: 85px;">
             </a>
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> </a>
@@ -67,17 +79,20 @@
                             <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="index.html#aboutMe">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html#skills">Skills</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="projects.html">Projects</a>
                         </li>
 
                     </ul>
-                    <form class="d-flex" role="search">
+                    <!--form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form!-->
                 </div>
             </div>
         </nav>
@@ -88,53 +103,69 @@
             Projects:
         </div>
 
-<hr class="featurette-divider">
+        <hr class="featurette-divider">
 
         <section class="projects">
             <div class="thyme">
-                <img class="firstImg" src="thymeCafe.jpg" alt="Thyme Cafe website ">
+                <img class="firstImg" src="images/thymeCafe.jpg" alt="Thyme Cafe website ">
                 <span class="about">
                     <h2 class="mt-4">Thyme Cafe</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis expedita optio quis eaque
-                        exercitationem porro ullam nostrum ab dignissimos architecto impedit, dolorem ipsam, voluptatum
-                        officiis cumque magnam, placeat voluptate esse.</p>
+                    <p>Created a restaurant website as part of a web development course. The site includes a homepage
+                        layout with navigation, a menu page, information, and visual styling. Designed using semantic
+                        HTML and custom
+                        CSS, the project emphasized clean structure, basic accessibility, and foundational front-end
+                        skills. While the
+                        restaurant was fictional, the goal was to practice layout, content organization, and front-end
+                        presentation.</p>
                 </span>
-
             </div>
 
 
+            <!--div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner ms-0 ps-0">
+                    <div class="carousel-item active">
+                        <img src="images/inside.png" class="d-block w-100" alt="inside">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/info.png" class="d-block w-100" alt="info">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/menu.png" class="d-block w-100" alt="menu">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div!-->
 
-            <div class="thyme">
-                <img src="thymeCafe.jpg" alt="Thyme Cafe website ">
-                <span class="about">
-                    <h2 class="mt-4">Thyme Cafe</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quaerat repellendus doloribus
-                        saepe
-                        aliquid, sunt quae inventore, qui ipsam fuga labore assumenda dicta itaque aspernatur laudantium
-                        nobis obcaecati nemo rerum.</p>
-                </span>
-
-            </div>
 
 
-            <div class="thyme">
-                <img src="thymeCafe.jpg" alt="Thyme Cafe website ">
-                <span class="about">
-                    <h2 class="mt-4">Thyme Cafe</h2>
-                    <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolor doloremque,
-                        molestias velit
-                        quidem debitis aperiam harum architecto corporis praesentium. Corporis in dolorum modi
-                        voluptatibus
-                        totam consectetur unde animi debitis?</p>
-                </span>
 
-            </div>
+
+
+
+
 
 
         </section>
 
-<hr class="featurette-divider">
-        <footer class="container">
+        <hr class="featurette-divider">
+        <footer class="container   ms-0 ps-0">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <span> &copy; ERosenbaum 2025</span>

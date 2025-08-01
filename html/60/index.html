@@ -11,6 +11,15 @@
             .accordion {
                 padding-left: 0;
             }
+
+            html {
+                scroll-padding-top: 3em;
+                scroll-behavior: smooth;
+            }
+
+            #skills {
+                padding-top: 50px;
+            }
         </style>
     </head>
 
@@ -18,7 +27,7 @@
 
         <nav class="navbar navbar-* navbar-expand-lg bg-body-tertiary  fixed-top">
             <a class="navbar-brand" href="#">
-                <img src="ER.png" alt="" class="img-fluid" style="max-width: 85px;">
+                <img src="images/ER.png" alt="" class="img-fluid" style="max-width: 85px;">
             </a>
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"> </a>
@@ -32,17 +41,20 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="#aboutMe">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#skills">Skills</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="projects.html">Projects</a>
                         </li>
 
                     </ul>
-                    <form class="d-flex" role="search">
+                    <!--form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form!-->
                 </div>
             </div>
         </nav>
@@ -52,26 +64,30 @@
 
 
 
-        <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <div id="aboutMe" class="p-5 text-center bg-body-tertiary rounded-3">
             <div class="container-fluid ">
                 <h1 class="text-body-emphasis mt-5"> Eta Rosenbaum</h1>
                 <p class="col-lg-8 mx-auto fs-5 text-muted">
-                    I graduated high school in Lakewood and am currently studying programming at PCS. I'm building a solid foundation in
-                    software development, learning languages like C#, SQL, and JavaScript, and working on real-world projects to grow my
+                    I graduated high school in Lakewood and am currently studying programming at PCS and going for my BS
+                    in Computer Programming and Technology from Woodmont College. I'm building a solid foundation in
+                    software development, learning languages like C#, SQL, HTML and JavaScript, and working on
+                    real-world projects to grow my
                     skills in both front-end and back-end development.
 
                 </p>
                 <div class="d-inline-flex gap-2 mb-5 ">
-                    <button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 justify-content-center"
-                        type="button">
-                        Projects
-                    </button>
-
+                    <a href="projects.html">
+                        <button
+                            class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 justify-content-center"
+                            type="button">
+                            Projects
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="container text-center fs-1 fw-bold">
+        <div id="skills" class="container text-center fs-1 fw-bold">
             My Skills:
         </div>
 
@@ -87,17 +103,18 @@
         <div class="row featurette">
             <div class="col-md-7">
                 <h2 class="featurette-heading fw-normal fs-2 lh-1">C# </h2>
-                <p class="lead fs-4" >I have hands-on experience working with C# and the .NET framework to build robust back-end systems and software
-                solutions. I enjoy designing and developing clean, efficient code that powers applications behind the scenes, whether
-                it’s handling data, creating APIs, or managing business logic. Over time, I’ve gotten comfortable navigating the .NET
-                ecosystem and applying best practices to build scalable, maintainable projects.
+                <p class="lead fs-4">I have hands-on experience working with C# and the .NET framework to build robust
+                    back-end systems and software
+                    solutions. I enjoy designing and developing clean, efficient code that powers applications behind
+                    the scenes. Over time, I’ve gotten comfortable navigating the .NET
+                    ecosystem and applying best practices to build scalable, maintainable projects.
                 </p>
             </div>
 
 
             <div class="col-md-5">
 
-                <img src="cSharp.png" class="img-fluid" alt="C-sharp logo" style="width: 250px;">
+                <img src="images/cSharp.png" class="img-fluid" alt="C-sharp logo" style="width: 250px;">
             </div>
         </div>
 
@@ -106,17 +123,18 @@
         <div class="row featurette mt-5">
             <div class="col-md-7 order-md-2">
                 <h2 class="featurette-heading fw-normal lh-1">SQL</h2>
-                <p class="lead fs-4">I’m comfortable writing SQL queries to retrieve, filter, and update data in relational
+                <p class="lead fs-4">I’m comfortable writing SQL queries to retrieve, filter, and update data in
+                    relational
                     databases. Whether it’s pulling
                     specific information using SELECT statements, refining results with WHERE clauses, or updating
                     records to keep data
                     accurate, I enjoy working with SQL to manage and organize data efficiently. I’ve worked with
-                    databases like SQL Server
+                    databases like
                     and MySQL, and I’m always eager to learn more about optimizing queries and designing schemas.
                 </p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img src="sql.png" alt="SQL logo" style="width: 400px;">
+                <img src="images/sql.png" alt="SQL logo" style="width: 400px;">
             </div>
         </div>
 
@@ -126,9 +144,11 @@
 
             <div class="col-md-7 mt-5">
                 <h2 class="featurette-heading fw-normal  lh-1">HTML</h2>
-                <p class="lead fs-4">I’m comfortable using HTML to build and structure web pages, making sure the content is
+                <p class="lead fs-4">I’m comfortable using HTML to build and structure web pages, making sure the
+                    content is
                     organized and easy to read. I
-                    enjoy combining it with CSS to style the pages and JavaScript to add interactivity, creating
+                    enjoy combining it with CSS and Bootstrap to style the pages and JavaScript to add interactivity,
+                    creating
                     websites that look good and
                     feel dynamic. Whether it’s setting up headings, paragraphs, images, or links, I know how to put
                     everything together so
@@ -136,7 +156,7 @@
                 </p>
             </div>
             <div class="col-md-5">
-                <img src="html.png" alt="" style="width: 300px;">
+                <img src="images/html.png" alt="" style="width: 300px;">
             </div>
         </div>
 
@@ -144,7 +164,7 @@
         </div>
 
 
-        <footer class="container">
+        <footer class="container ms-0 ps-0">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <span> &copy; ERosenbaum 2025</span>
