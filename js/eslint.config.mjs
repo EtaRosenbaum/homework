@@ -9,7 +9,10 @@ export default defineConfig([
   { files: ["**/*.{js,mjs,cjs}"], languageOptions: { globals: globals.browser } },
   {
     "rules": {
-      "no-var": "error"
+      "no-var": "error",
+      "semi": "error",
+      "eqeqeq": "error",
+      "wrap-iife": "error"
     }
   }
 ]);
