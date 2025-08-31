@@ -6,7 +6,7 @@ const dayOfWeek = (function () {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return {
         getDayName(index) {
-            return days[index - 1]
+            return days[index - 1];
         },
         getDayNumber(day) {
             return days.findIndex(d => d === day) + 1;
@@ -44,7 +44,7 @@ const interestCalculator = (function (rate = 0, years = 0) {
             const total = (principal * rate * years) / 100;
             return total;
         }
-    }
+    };
 });
 
 console.log(interestCalculator.calculateInterest(1000));
