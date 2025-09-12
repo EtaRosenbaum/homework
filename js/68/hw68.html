@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <body>
+        <input id="msg">
+        <input id="modal" type="checkbox">modal
+        <button id="show">show</button>
+        <hr>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis odio rerum maxime explicabo quos
+        aperiam quae deleniti soluta. Sint perspiciatis distinctio aut itaque at repellat temporibus debitis ea
+        assumenda?
+        <script src="hw68.js"></script>
+        <script>
+            pcsMessageBox('This is a test!!!');
+
+            // show.addEventListener('click', () => {
+            //     pcsMessageBox(msg.value, modal.checked);
+            // });
+           show.addEventListener('click', () => {
+                pcsMessageBox(msg.value, modal.checked, ['yes', 'no'], function (choice) {
+                    console.log('you picked', choice);
+                });
+            });
+
+
+            pcsMessageBox('Is this enough homework?', false, ['Yes', 'No', 'Maybe'], function (usersChoice) {
+                    if (usersChoice === 'Yes') {
+                        alert("Great! You're ready to move on.");
+                    } else if (usersChoice === 'No') {
+                        alert("Okay, let's review the material again.");
+                    } else {
+                        alert("Maybe? Take your time to decide.");
+                    }
+                });
+
+        </script>
+    </body>
+
+</html>
