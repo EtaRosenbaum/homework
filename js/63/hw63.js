@@ -37,7 +37,7 @@ function allOfThem(array, testCallback) {
 }
 
 
-console.log(allOfThem(letters, lowerCase));  
+console.log(allOfThem(letters, lowerCase));
 
 console.log(allOfThem(lettersUppercase, upperCase));
 console.log('hello');
@@ -69,7 +69,7 @@ console.log(letters.some(lowerCase));
 function onlyIf(array, testCallback, callback) {
     for (let i = 0; i < array.length; i++) {
         if (testCallback[i]) {
-            callback(array[i])
+            callback(array[i]);
         }
     }
 }
