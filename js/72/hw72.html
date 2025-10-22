@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet">
+        <style>
+            #recipeList{
+                display: flex;
+                flex-direction: row;
+                gap: 1em;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1em;
+            }
+            body{
+                font-family: 'inter', sans-serif;
+            }
+            #recipeDiv{
+                display: flex;
+                flex-direction: column;
+              align-items: center;
+              gap: 2em;
+            }
+            #ingredients{
+                list-style: none;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+        <div id="recipeList">
+            <h2>Choose a recipe:</h2>
+        </div>
+
+        <div id="recipeDiv">
+            <div id="name"> </div>
+            <ul id="ingredients"></ul>
+            <img id="recipePic" src=""></img>
+
+        </div>
+        <script src="hw72.js"></script>
+    </body>
+
+</html>
