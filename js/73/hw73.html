@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Videos</title>
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            header h1 {
+                text-align: center;
+            }
+
+            #videosList {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1em;
+                justify-content: center;
+            }
+
+            #has-video {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #title {
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>JVideo</h1>
+        </header>
+        <hr>
+
+
+        <div id="videosList">
+        </div>
+
+        <div id="has-video">
+            <h3 id="title"></h3>
+            <video id="chosenVideo" src=""></video>
+        </div>
+
+        <script src="hw73.js"></script>
+    </body>
+
+</html>
