@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            html,
+            body,
+            #map {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            #container {
+                display: flex;
+                height: 100%;
+                width: 100%;
+            }
+
+            #sidebar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 200px;
+                overflow-y: auto;
+                overflow-x: auto;
+                padding: 10px;
+                gap: .5em;
+                margin-top: 5px;
+            }
+
+            #searchButton {
+                background-color: white;
+                border-radius: 5px;
+                width: 100px;
+            }
+
+            input {
+                margin: left 5px;
+            }
+
+            #map {
+                flex: 1;
+                height: 100%;
+            }
+
+            li {
+                list-style: none;
+                margin-bottom: 10px;
+                cursor: pointer;
+            }
+
+            li img {
+                width: 50px;
+                height: 50px;
+                max-width: 50px;
+                max-height: 50px;
+                object-fit: cover;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+
+            #sidebar div {
+                word-wrap: break-all;
+                white-space: normal;
+                overflow-wrap: break-word;
+                word-break: break-word;
+
+            }
+
+            #resultBox,
+            #resultBox p {
+                white-space: normal;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                word-break: break-word;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="container">
+            <div id="sidebar">
+
+                <input type="text" id="searchBox" placeholder="Search the map">
+                <button id="searchButton">Search</button>
+                <ul id="resultBox"></ul>
+            </div>
+            <div id="map"></div>
+
+        </div>
+
+
+
+
+        <script>
+            (g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
+                key: "YOUR API HERE",
+                v: "weekly",
+                // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+                // Add other bootstrap parameters as needed, using camel case.
+            });
+        </script>
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
