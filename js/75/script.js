@@ -40,7 +40,7 @@
             resultBox.append(searchResult);
 
             // Fetch Wikipedia results
-            const response = await fetch(`http://api.geonames.org/wikipediaSearch?q=${search}&maxRows=10&username=rosenbaum&type=json`);
+            const response = await fetch(`http://api.geonames.org/wikipediaSearch?q=${search}&maxRows=10&username=USER_NAME&type=json`);
             if (!response.ok) throw new Error(`${response.status} - ${response.statusText}`);
 
             const list = await response.json();
@@ -58,7 +58,7 @@
                 const newLocation = { lat: li.lat, lng: li.lng };
                 const wikiUrl = `https://${li.wikipediaUrl}`;
 
-                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${li.lat}&lon=${li.lng}&units=imperial&appid=9f4c2f48accc368b5b06c032f22099ef`);
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${li.lat}&lon=${li.lng}&units=imperial&appid=API_KEY`);
 
                 const weatherData = await weatherResponse.json();
 
