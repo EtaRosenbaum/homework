@@ -19,11 +19,13 @@
     let originalIndex = null;
     let moved = false;
 
+    // Toggle sidebar
     toggleBtn.addEventListener('click', () => {
         sidebar.classList.toggle('open');
         toggleBtn.textContent = sidebar.classList.contains('open') ? 'X' : 'Customize';
     });
 
+    // Background selection
     bgOptions.forEach(bg => {
         bg.addEventListener('click', () => {
             document.body.style.backgroundImage = `url(${bg.src})`;
@@ -38,23 +40,21 @@
         part.dataset.original = 'true';
     });
 
+    // Drag start
     document.addEventListener('mousedown', e => {
-        if (e.target.classList.contains('part')) {
-            e.preventDefault();
-            dragging = e.target;
+        if (!e.target.classList.contains('part')) return;
 
-            const rect = dragging.getBoundingClientRect();
-            offset = {
-                x: e.clientX - rect.left,
-                y: e.clientY - rect.top
-            };
+        e.preventDefault();
+        dragging = e.target;
 
-            originalParent = e.target.parentNode;
-            originalIndex = Array.from(originalParent.children).indexOf(e.target);
-            moved = false;
-        }
+        const rect = dragging.getBoundingClientRect();
+        offset = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+        originalParent = dragging.parentNode;
+        originalIndex = Array.from(originalParent.children).indexOf(dragging);
+        moved = false;
     });
 
+    // Drag move
     document.addEventListener('mousemove', e => {
         if (!dragging) return;
 
@@ -72,9 +72,9 @@
         const gameRect = gamearea.getBoundingClientRect();
         dragging.style.left = `${e.clientX - gameRect.left - offset.x}px`;
         dragging.style.top = `${e.clientY - gameRect.top - offset.y}px`;
-        
     });
 
+    // Drag end
     document.addEventListener('mouseup', e => {
         if (!dragging) return;
 
@@ -87,12 +87,13 @@
             imgRect.right < 0 || imgRect.left > vw || imgRect.bottom < 0 || imgRect.top > vh;
 
         const droppedInPartsSection =
-            e.pageX >= partsRect.left &&
-            e.pageX <= partsRect.right &&
-            e.pageY >= partsRect.top &&
-            e.pageY <= partsRect.bottom;
+            e.clientX >= partsRect.left &&
+            e.clientX <= partsRect.right &&
+            e.clientY >= partsRect.top &&
+            e.clientY <= partsRect.bottom;
 
         if (droppedOffScreen || droppedInPartsSection) {
+            // Put back into sidebar
             dragging.dataset.original = 'true';
             dragging.classList.remove('in-game');
             dragging.style.position = 'relative';
@@ -100,8 +101,9 @@
             dragging.style.top = '';
             dragging.style.zIndex = '';
 
-            if (partsSection.children[originalIndex]) {
-                partsSection.insertBefore(dragging, partsSection.children[originalIndex]);
+            const parts = Array.from(partsSection.children);
+            if (originalIndex < parts.length) {
+                partsSection.insertBefore(dragging, parts[originalIndex]);
             } else {
                 partsSection.appendChild(dragging);
             }
@@ -114,6 +116,7 @@
         autosave();
     });
 
+    // Get all parts currently in the game area
     function getParts() {
         return Array.from(document.querySelectorAll('.part.in-game')).map(part => ({
             src: part.src,
@@ -124,6 +127,7 @@
         }));
     }
 
+    // Save new drawing
     function saveDrawing(name) {
         let drawings = JSON.parse(localStorage.getItem('drawings')) || [];
         drawings.push({
@@ -135,6 +139,7 @@
         updateLoadDropdown();
     }
 
+    // Save current drawing
     function saveCurrentDrawing(showAlert = true) {
         if (currentDrawingIndex === null) return;
 
@@ -149,6 +154,7 @@
         updateLoadDropdown();
     }
 
+    // Load a saved drawing
     function loadDrawing(index) {
         const drawings = JSON.parse(localStorage.getItem('drawings')) || [];
         const drawing = drawings[index];
@@ -161,6 +167,7 @@
         document.body.style.backgroundPosition = 'center';
         document.body.style.backgroundRepeat = 'no-repeat';
 
+        // Reset all parts
         document.querySelectorAll('.part.in-game').forEach(p => {
             p.classList.remove('in-game');
             p.dataset.original = 'true';
@@ -171,6 +178,7 @@
             partsSection.appendChild(p);
         });
 
+        // Place saved parts
         drawing.parts.forEach(p => {
             const img = Array.from(document.querySelectorAll('.part')).find(x => x.src === p.src);
             if (img) {
@@ -186,7 +194,6 @@
         });
     }
 
-
     function updateCurrentProjectLabel() {
         const drawings = JSON.parse(localStorage.getItem('drawings')) || [];
         const label = document.querySelector('#currentProjectLabel');
@@ -198,9 +205,6 @@
             label.textContent = 'Current Project: (unknown)';
         }
     }
-
-
-
 
     function updateLoadDropdown() {
         loadSelect.innerHTML = '';
@@ -218,6 +222,7 @@
         saveCurrentDrawing(false);
     }
 
+    // Reset everything
     resetBtn.addEventListener("click", () => {
         document.querySelectorAll('.part.in-game').forEach(p => {
             p.classList.remove('in-game');
@@ -234,6 +239,7 @@
         updateCurrentProjectLabel();
     });
 
+    // Save button
     saveBtn.addEventListener("click", () => {
         if (currentDrawingIndex === null) {
             const name = prompt("Name your drawing:") || 'Untitled';
@@ -245,6 +251,7 @@
         updateCurrentProjectLabel();
     });
 
+    // Load dropdown
     loadSelect.addEventListener("change", () => {
         const index = parseInt(loadSelect.value);
         if (!isNaN(index)) loadDrawing(index);
