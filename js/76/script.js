@@ -42,7 +42,13 @@
         if (e.target.classList.contains('part')) {
             e.preventDefault();
             dragging = e.target;
-            offset = { x: e.offsetX, y: e.offsetY };
+
+            const rect = dragging.getBoundingClientRect();
+            offset = {
+                x: e.clientX - rect.left,
+                y: e.clientY - rect.top
+            };
+
             originalParent = e.target.parentNode;
             originalIndex = Array.from(originalParent.children).indexOf(e.target);
             moved = false;
@@ -64,8 +70,9 @@
         }
 
         const gameRect = gamearea.getBoundingClientRect();
-        dragging.style.left = `${e.pageX - gameRect.left - offset.x}px`;
-        dragging.style.top = `${e.pageY - gameRect.top - offset.y}px`;
+        dragging.style.left = `${e.clientX - gameRect.left - offset.x}px`;
+        dragging.style.top = `${e.clientY - gameRect.top - offset.y}px`;
+        
     });
 
     document.addEventListener('mouseup', e => {
@@ -224,7 +231,7 @@
         document.body.style.backgroundImage = '';
         currentBg = '';
         currentDrawingIndex = null;
-        updateCurrentProjectLabel(); 
+        updateCurrentProjectLabel();
     });
 
     saveBtn.addEventListener("click", () => {
