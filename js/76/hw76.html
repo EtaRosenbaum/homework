@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mr. Potato Head Game</title>
+
+        <link rel="stylesheet" href="style.css">
+
+
+        <style>
+
+        </style>
+
+    </head>
+
+    <body>
+        <audio src="gameMusic.mp3" controls autoplay loop></audio>
+        <h2 id="title">Mr. Potato Head</h2>
+        <p id="instructions">Drag the parts onto Mr. Potato Head to create your own look!</p>
+
+        <button id="toggleParts">Customize</button>
+
+        <div class="parts" id="parts-sidebar">
+            <h3>Choose Background</h3>
+            <div class="background-options">
+                <img class="bg-option" src="Images/nhn-Hx4Vyl0X7j0-unsplash.jpg" alt="Background 1">
+                <img class="bg-option" src="Images/lisa-anna-FaB5_6dWrR8-unsplash.jpg" alt="Background 2">
+                <img class="bg-option" src="Images/collov-home-design-liEmt5SChxY-unsplash.jpg" alt="Background 3">
+            </div>
+
+            <h3>Choose Parts</h3>
+            <div id="parts-section">
+                <img class="part" src="Images/eyes1.png" alt="eyes">
+                <img class="part" src="Images/eyes2.png" alt="eyes">
+                <img class="part" src="Images/eyes3.png" alt="eyes">
+                <img class="part" src="Images/eyes4.png" alt="eyes">
+                <img class="part" src="Images/glasses1.png" alt="glasses">
+                <img class="part" src="Images/mouth.png" alt="mouth">
+                <img class="part" src="Images/mouth2.png" alt="mouth">
+                <img class="part" src="Images/nose.png" alt="nose">
+                <img class="part" src="Images/nose2.png" alt="nose">
+                <img class="part" id="glasses2" src="Images/glasses2.png" alt="glasses">
+            </div>
+        </div>
+
+        <div class="game-area">
+            <img class="potato" src="Images/potato.png" alt="Mr. Potato Head">
+        </div>
+        
+        <p id="currentProjectLabel">Current Project: (none)</p>
+        <div id="save-load">
+            <button id="saveDrawingBtn">Save Drawing</button>
+            <Select id="loadDrawingSelect">
+                <option hidden>Load a drawing</option>
+            </Select>
+            <button id="resetBtn">Reset</button>
+        </div>
+
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
