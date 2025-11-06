@@ -6,9 +6,11 @@
     const bgOptions = document.querySelectorAll('.bg-option');
     const gamearea = document.querySelector('.game-area');
     const loadSelect = document.querySelector("#loadDrawingSelect");
-    const saveBtn = document.querySelector("#saveDrawingBtn");
     const resetBtn = document.querySelector("#resetBtn");
     const partsSection = document.querySelector('#parts-section');
+    const nameInput = document.querySelector("#drawingNameInput");
+    const confirmBtn = document.querySelector("#confirmSaveNameBtn");
+    const message = document.querySelector("#message");
 
     let currentBg = '';
     let currentDrawingIndex = null;
@@ -19,20 +21,20 @@
     let originalIndex = null;
     let moved = false;
 
-    // Toggle sidebar
+    const fallbackBg = 'Images/backgroundjpg.jpeg';
+
     toggleBtn.addEventListener('click', () => {
         sidebar.classList.toggle('open');
         toggleBtn.textContent = sidebar.classList.contains('open') ? 'X' : 'Customize';
     });
 
-    // Background selection
     bgOptions.forEach(bg => {
         bg.addEventListener('click', () => {
-            document.body.style.backgroundImage = `url(${bg.src})`;
+            currentBg = bg.src || fallbackBg;
+            document.body.style.backgroundImage = `url(${currentBg})`;
             document.body.style.backgroundSize = 'cover';
             document.body.style.backgroundPosition = 'center';
             document.body.style.backgroundRepeat = 'no-repeat';
-            currentBg = bg.src;
         });
     });
 
@@ -40,7 +42,6 @@
         part.dataset.original = 'true';
     });
 
-    // Drag start
     document.addEventListener('mousedown', e => {
         if (!e.target.classList.contains('part')) return;
 
@@ -54,7 +55,6 @@
         moved = false;
     });
 
-    // Drag move
     document.addEventListener('mousemove', e => {
         if (!dragging) return;
 
@@ -74,7 +74,6 @@
         dragging.style.top = `${e.clientY - gameRect.top - offset.y}px`;
     });
 
-    // Drag end
     document.addEventListener('mouseup', e => {
         if (!dragging) return;
 
@@ -93,7 +92,6 @@
             e.clientY <= partsRect.bottom;
 
         if (droppedOffScreen || droppedInPartsSection) {
-            // Put back into sidebar
             dragging.dataset.original = 'true';
             dragging.classList.remove('in-game');
             dragging.style.position = 'relative';
@@ -116,7 +114,6 @@
         autosave();
     });
 
-    // Get all parts currently in the game area
     function getParts() {
         return Array.from(document.querySelectorAll('.part.in-game')).map(part => ({
             src: part.src,
@@ -127,47 +124,31 @@
         }));
     }
 
-    // Save new drawing
-    function saveDrawing(name) {
-        let drawings = JSON.parse(localStorage.getItem('drawings')) || [];
-        drawings.push({
-            name: name,
-            background: currentBg,
-            parts: getParts()
-        });
-        localStorage.setItem('drawings', JSON.stringify(drawings));
-        updateLoadDropdown();
-    }
-
-    // Save current drawing
-    function saveCurrentDrawing(showAlert = true) {
+    function saveCurrentDrawing(showMsg = true) {
         if (currentDrawingIndex === null) return;
-
         let drawings = JSON.parse(localStorage.getItem('drawings')) || [];
         drawings[currentDrawingIndex] = {
             ...drawings[currentDrawingIndex],
-            background: currentBg,
+            background: currentBg || fallbackBg,
             parts: getParts()
         };
         localStorage.setItem('drawings', JSON.stringify(drawings));
-        if (showAlert) alert("Drawing saved!");
+        if (showMsg) showMessage("Drawing saved!");
         updateLoadDropdown();
     }
 
-    // Load a saved drawing
     function loadDrawing(index) {
         const drawings = JSON.parse(localStorage.getItem('drawings')) || [];
         const drawing = drawings[index];
         if (!drawing) return;
 
         currentDrawingIndex = index;
-        currentBg = drawing.background;
+        currentBg = drawing.background || fallbackBg;
         document.body.style.backgroundImage = `url(${currentBg})`;
         document.body.style.backgroundSize = 'cover';
         document.body.style.backgroundPosition = 'center';
         document.body.style.backgroundRepeat = 'no-repeat';
 
-        // Reset all parts
         document.querySelectorAll('.part.in-game').forEach(p => {
             p.classList.remove('in-game');
             p.dataset.original = 'true';
@@ -178,7 +159,6 @@
             partsSection.appendChild(p);
         });
 
-        // Place saved parts
         drawing.parts.forEach(p => {
             const img = Array.from(document.querySelectorAll('.part')).find(x => x.src === p.src);
             if (img) {
@@ -192,6 +172,31 @@
                 gamearea.appendChild(img);
             }
         });
+
+        updateCurrentProjectLabel();
+    }
+
+    function updateLoadDropdown() {
+        const drawings = JSON.parse(localStorage.getItem("drawings")) || [];
+        loadSelect.innerHTML = '';
+
+        const placeholder = document.createElement("option");
+        placeholder.value = '';
+        placeholder.textContent = 'Load a drawing';
+        placeholder.disabled = true;
+        placeholder.selected = true;
+        loadSelect.appendChild(placeholder);
+
+        drawings.forEach((d, i) => {
+            const option = document.createElement("option");
+            option.value = i;
+            option.textContent = d.name;
+            loadSelect.appendChild(option);
+        });
+
+        if (currentDrawingIndex !== null) {
+            loadSelect.value = currentDrawingIndex;
+        }
     }
 
     function updateCurrentProjectLabel() {
@@ -206,23 +211,11 @@
         }
     }
 
-    function updateLoadDropdown() {
-        loadSelect.innerHTML = '';
-        const drawings = JSON.parse(localStorage.getItem("drawings")) || [];
-        drawings.forEach((d, i) => {
-            const option = document.createElement("option");
-            option.value = i;
-            option.textContent = d.name;
-            loadSelect.appendChild(option);
-        });
-    }
-
     function autosave() {
         if (currentDrawingIndex === null) return;
         saveCurrentDrawing(false);
     }
 
-    // Reset everything
     resetBtn.addEventListener("click", () => {
         document.querySelectorAll('.part.in-game').forEach(p => {
             p.classList.remove('in-game');
@@ -233,31 +226,53 @@
             p.style.zIndex = '';
             partsSection.appendChild(p);
         });
-        document.body.style.backgroundImage = '';
+        document.body.style.backgroundImage = `url(${fallbackBg})`;
         currentBg = '';
         currentDrawingIndex = null;
+
+        nameInput.style.display = "inline-block";
+        confirmBtn.style.display = "inline-block";
+
         updateCurrentProjectLabel();
+        updateLoadDropdown();
     });
 
-    // Save button
-    saveBtn.addEventListener("click", () => {
-        if (currentDrawingIndex === null) {
-            const name = prompt("Name your drawing:") || 'Untitled';
-            saveDrawing(name);
-            currentDrawingIndex = JSON.parse(localStorage.getItem('drawings')).length - 1;
-        } else {
-            saveCurrentDrawing();
-        }
+    confirmBtn.addEventListener("click", () => {
+        const name = nameInput.value.trim() || "Untitled";
+
+        let drawings = JSON.parse(localStorage.getItem('drawings')) || [];
+        drawings.push({
+            name: name,
+            background: currentBg || fallbackBg,
+            parts: getParts()
+        });
+        localStorage.setItem('drawings', JSON.stringify(drawings));
+
+        currentDrawingIndex = drawings.length - 1;
+
+        nameInput.value = "";
+        nameInput.style.display = "none";
+        confirmBtn.style.display = "none";
+
+        updateLoadDropdown();
         updateCurrentProjectLabel();
+        showMessage("Drawing saved!");
     });
 
-    // Load dropdown
+    nameInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") confirmBtn.click();
+    });
+
     loadSelect.addEventListener("change", () => {
         const index = parseInt(loadSelect.value);
         if (!isNaN(index)) loadDrawing(index);
-        updateCurrentProjectLabel();
     });
 
-    updateLoadDropdown();
+    function showMessage(text) {
+        message.textContent = text;
+        message.style.display = "block";
+        setTimeout(() => message.style.display = "none", 2000);
+    }
 
+    updateLoadDropdown();
 }());

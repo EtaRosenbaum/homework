@@ -2,7 +2,10 @@
 
 body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
-    background: linear-gradient(to bottom, #fff6d1, #e7c360);
+    background-image: url('Images/backgroundjpg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     min-height: 825px;
     margin: 0;
     padding: 0;
@@ -288,3 +291,55 @@ audio {
     transform: translateY(1px);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
+
+#drawingNameInput {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #d4a65f;
+    font-size: 14px;
+    background: #fff8dc;
+    color: #8b4513;
+    margin-right: 10px;
+}
+
+
+
+#drawingNameInput:focus {
+    outline: none;
+    border-color: #f5b642;
+    box-shadow: 0 0 4px #f5b642;
+}
+
+#confirmSaveNameBtn {
+    background: #f5b642;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#confirmSaveNameBtn:hover {
+    background: #e29a2f;
+    transform: translateY(-2px);
+}
+
+#confirmSaveNameBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#message {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: opacity 0.5s ease;
+}
+
+

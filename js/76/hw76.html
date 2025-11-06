@@ -48,17 +48,18 @@
         <div class="game-area">
             <img class="potato" src="Images/potato.png" alt="Mr. Potato Head">
         </div>
-        
+
         <p id="currentProjectLabel">Current Project: (none)</p>
-        <div id="save-load">
-            <button id="saveDrawingBtn">Save Drawing</button>
-            <Select id="loadDrawingSelect">
-                <option hidden>Load a drawing</option>
-            </Select>
-            <button id="resetBtn">Reset</button>
-        </div>
+    <div id="save-load">
+        <input type="text" id="drawingNameInput" placeholder="Enter drawing name">
+        <button id="confirmSaveNameBtn">Save</button>
+        <p id="message"></p>
 
-
+        <select id="loadDrawingSelect">
+            <option >Load a drawing</option>
+        </select>
+        <button id="resetBtn">Reset</button>
+    </div>
         <script src="script.js"></script>
     </body>
 
