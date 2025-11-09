@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Poppins:wght@400&display=swap");
+
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    background-image: url('Images/backgroundjpg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 825px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+#title {
+    font-family: 'poppins', 'Arial Rounded MT Bold', cursive;
+    font-size: 2em;
+    color: #8b4513;
+    margin-top: 40px;
+}
+
+#instructions {
+    text-align: center;
+    color: #5a3d0c;
+    font-weight: bold;
+}
+
+p,
+#save-load {
+    transform: translateY(-40px);
+}
+
+
+.game-area {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    z-index: 1000;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-40px);
+}
+
+#parts-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background: #fff8dc;
+    box-shadow: -3px 0 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+#parts-sidebar.open {
+    right: 0;
+}
+
+#parts-sidebar img {
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+
+    transition: transform 0.2s;
+}
+
+#parts-sidebar img:hover {
+    transform: scale(1.1);
+}
+
+#parts-sidebar h3 {
+    text-align: center;
+}
+
+.part {
+    width: 100px;
+}
+
+.part#glasses2 {
+    width: 200px;
+}
+
+#toggleParts {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #f5b642;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#toggleParts:hover {
+    background: #e29a2f;
+    transform: translateY(-2px);
+}
+
+#toggleParts:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#parts-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background: #fff8dc;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: right 0.4s ease;
+    overflow-y: auto;
+    border-left: 4px solid #d4a65f;
+}
+
+#parts-sidebar h3 {
+    text-align: center;
+    color: #8b4513;
+    font-family: 'Poppins', 'Fredoka One', sans-serif;
+    font-size: 1.3em;
+}
+
+.background-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.bg-option {
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.bg-option:hover {
+    transform: scale(1.1);
+    border-color: #d4a65f;
+}
+
+.game-area {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    margin: 50px auto;
+    z-index: 2;
+}
+
+.game-area img.potato {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+}
+
+.music {
+    position: absolute;
+    flex-direction: column;
+    width: 300px;
+    gap: 1em;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0.8;
+    background-color: #ffffffa4;
+
+font-size: 16px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #d4a65f;
+    background: #fff8dc;
+    color: #8b4513;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+
+
+}
+
+
+#save-load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#saveDrawingBtn {
+    background: #f5b642;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+#saveDrawingBtn:hover {
+    background: #e29a2f;
+    transform: translateY(-2px);
+}
+
+#saveDrawingBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#loadDrawingSelect {
+    font-size: 16px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 2px solid #d4a65f;
+    background: #fff8dc;
+    color: #8b4513;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+}
+
+#loadDrawingSelect:hover {
+    border-color: #f5b642;
+    background: #fff1b8;
+}
+
+#loadDrawingSelect:focus {
+    outline: none;
+    border-color: #e29a2f;
+    box-shadow: 0 0 5px #e29a2f;
+}
+
+#save-load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#currentProjectLabel {
+    background: linear-gradient(135deg, #fffaf0, #fff3d6);
+    color: #8b4513;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    border: 2px solid #d4a65f;
+    border-radius: 10px;
+    padding: 10px 18px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    user-select: none;
+    white-space: nowrap;
+    align-items: center;
+}
+
+#currentProjectLabel:hover {
+    background: linear-gradient(135deg, #fff8e0, #ffeeb3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#resetBtn {
+    background: #f5b642;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#resetBtn:hover {
+    background: #e29a2f;
+    transform: translateY(-2px);
+}
+
+#resetBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#drawingNameInput {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #d4a65f;
+    font-size: 14px;
+    background: #fff8dc;
+    color: #8b4513;
+    margin-right: 10px;
+}
+
+
+
+#drawingNameInput:focus {
+    outline: none;
+    border-color: #f5b642;
+    box-shadow: 0 0 4px #f5b642;
+}
+
+#confirmSaveNameBtn {
+    background: #f5b642;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s, transform 0.2s;
+}
+
+#confirmSaveNameBtn:hover {
+    background: #e29a2f;
+    transform: translateY(-2px);
+}
+
+#confirmSaveNameBtn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#message {
+    display: none;
+    color: green;
+    font-weight: bold;
+    margin-top: 100px;
+    transition: opacity 0.5s ease;
+}
