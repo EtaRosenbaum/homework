@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            #theCanvas {
+                display: block;
+            }
+
+            .addBalls {
+                background: #fff;
+                padding: 20px 30px;
+                border-radius: 15px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                display: flex;
+                gap: 15px;
+                align-items: center;
+                position: absolute;
+            }
+
+            .addBalls input[type="color"] {
+                width: 50px;
+                height: 50px;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                padding: 0;
+            }
+
+            .addBalls input[type="number"] {
+                width: 80px;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                font-size: 16px;
+                outline: none;
+                transition: 0.3s;
+            }
+
+            .addBalls input[type="number"]:focus {
+                border-color: #007bff;
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            }
+
+            .addBalls button {
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .addBalls button:hover {
+                background-color: #0056b3;
+                transform: translateY(-2px);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="addBalls">
+            <input type="color" id="colorInput">
+            <input type="number" id="radiusInput">
+            <button id="addBallBtn">Add Ball</button>
+        </div>
+    <canvas id="theCanvas"></canvas>
+        <script src="hw.js"></script>
+    </body>
+
+</html>
