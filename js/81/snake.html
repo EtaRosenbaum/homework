@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        font-family: "Inter", Arial, sans-serif;
+        background: #f4f5f7;
+        overflow: hidden;
+      }
+
+      #theCanvas {
+        display: flex;
+        border-radius: 12px;
+        border: 1px solid #d0d0d0;
+        background: linear-gradient(135deg, #9be7c4, #63d0b7);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      #scored {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        display: flex;
+        gap: 8px;
+        font-weight: 600;
+      }
+
+      #start {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 32px 40px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #2d8a5f;
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.15s ease;
+      }
+
+      button:hover {
+        background: #25744f;
+        transform: translateY(-2px);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      #endGameMessage {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 32px 40px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      }
+
+
+
+
+
+
+      #endedGame {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #ffffff;
+        color: #333;
+        padding: 32px 40px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      }
+
+      #endedGame .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: transparent;
+        color: #333;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      #endedGame .close-btn:hover {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="theCanvas"></canvas>
+    <div id="scored">
+      <h4>Score:&nbsp;</h4>
+      <h4 id="sc">0</h4>
+    </div>
+    <div id="start">
+      <h1>Welcome to the Snake Game!</h1>
+      <button id="startButton">Start Game</button>
+    </div>
+    <div id="endGameMessage">
+      <h1>Your final score is:&nbsp;</h1>
+      <h1 class="endScore"></h1>
+      <button id="restartButton">Restart</button>
+      <button id="end">End Game</button>
+    </div>
+    <div id="endedGame">
+      <button id="closeEndGame" class="close-btn">✖</button>
+
+      <h1>Game Ended. <br> Thanks for playing!</h1>
+    </div>
+    <script src="snake.js"></script>
+  </body>
+
+</html>
