@@ -1,0 +1,13 @@
+body{
+    font-size: 1em;
+    color: white;
+    background-color: rgb(105, 15, 105);
+}
+
+h1 {
+    font-size: .5em;
+    color: black;
+    background-color: white;
+    padding: 1em;
+}
+
