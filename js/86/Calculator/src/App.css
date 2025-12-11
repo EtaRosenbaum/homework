@@ -1,0 +1,14 @@
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 4em);
+  grid-template-rows: 4em;
+  gap: .5em;
+}
+
+ .calculator input {
+  grid-column: 1 / 5;
+  text-align: right;
+}
+.calculator button:last-of-type {
+  grid-column: 1 / 5;
+}
