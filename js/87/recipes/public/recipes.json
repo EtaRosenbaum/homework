@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "name": "Chocolate Cake",
+        "picture": "img/chocCake.jpg",
+        "ingredients": [
+            "cocoa powder",
+            "sugar",
+            "eggs",
+            "flour",
+            "baking powder"
+        ],
+        "directions": [
+            "combine all ingredients",
+            "put into pan",
+            "bake at 350"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Chocolate Chip Cookies",
+        "picture": "img/chocChip.jpg",
+        "ingredients": [
+            "flower",
+            "sugar",
+            "eggs",
+            "chocolate chips"
+        ],
+        "directions": [
+            "combine all ingredients",
+            "form into cookies",
+            "bake at 350"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Chocolate Mousse",
+        "picture": "img/chocMousse.jpg",
+        "ingredients": [
+            "eggs",
+            "wine",
+            "chocolate",
+            "sugar"
+        ],
+        "directions": [
+            "whip up egg whites",
+            "fold in rest of ingredients",
+            "freeze"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Chocolate Cookies",
+        "picture": "img/chocCookie.jpg",
+        "ingredients": [
+            "cocoa powder",
+            "flower",
+            "sugar",
+            "eggs"
+        ],
+        "directions": [
+            "combine all ingredients",
+            "form into cookies",
+            "bake at 350"
+        ]
+    }
+]
