@@ -1,0 +1,336 @@
+.buy {
+    padding: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.buy h2 {
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.home-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.home-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay span {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.home-card:hover img {
+    transform: scale(1.05);
+}
+
+.home-card:hover .overlay {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .buy {
+        padding: 20px;
+    }
+
+    .home-card img {
+        height: 180px;
+    }
+}
+
+
+
+/*sell home styles:*/
+
+.sell {
+    padding: 40px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.sell h2 {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #111;
+}
+
+.subtitle {
+    margin-bottom: 28px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Reuse grid + card styles */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.home-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.home-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay span {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.home-card:hover img {
+    transform: scale(1.05);
+}
+
+.home-card:hover .overlay {
+    opacity: 1;
+}
+
+/* CTA */
+.cta-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.cta {
+    background: #111;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.cta:hover {
+    background: #000;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .sell {
+        padding: 20px;
+    }
+
+    .home-card img {
+        height: 180px;
+    }
+}
+
+
+
+/*home page styles*/
+.home {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Hero */
+.hero {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+/* Action cards */
+.actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.action-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.action-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+/* Overlay */
+.action-card .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.action-card span {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Hover */
+.action-card:hover img {
+    transform: scale(1.05);
+}
+
+.action-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .action-card img {
+        height: 220px;
+    }
+}
+
+
+/*404 page styles*/
+
+.notfound-container {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.notfound-card {
+    max-width: 640px;
+    text-align: center;
+}
+
+.notfound-code {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.notfound-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.notfound-description {
+    font-size: 16px;
+    color: #4b5563;
+    margin-bottom: 32px;
+}
+
+.notfound-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-secondary {
+    border: 1px solid #d1d5db;
+    color: #374151;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #f3f4f6;
+}
