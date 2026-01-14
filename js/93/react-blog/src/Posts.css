@@ -1,0 +1,196 @@
+body {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for all posts (centering) */
+.BlogPostsGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* center all posts horizontally */
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+/* Individual post container */
+.postContainer {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 700px;
+    /* ensures posts are centered but not too wide */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.postContainer:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Post title */
+.postContainer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+    text-align: center;
+    /* center the title */
+}
+
+/* Post body */
+.postContainer p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    text-align: center;
+    /* center the body */
+}
+
+/* Comments button */
+.postContainer button {
+    display: block;
+    margin: 1rem auto 0;
+    /* center the button */
+    padding: 0.75rem 1.8rem;
+    font-size: 1.05rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.postContainer button:hover {
+    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+    transform: translateY(-2px);
+}
+
+/* Comments area */
+.CommentsArea {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f0f4ff;
+    border-radius: 10px;
+    text-align: center;
+    /* center comments text */
+}
+
+/* Pagination container */
+.postPage {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+/* Pagination buttons */
+.postPage button {
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.postPage button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.postPage button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+}
+
+/* Loading/Error messages */
+div[style] {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+    .postContainer {
+        width: 95%;
+    }
+}
+.LoadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+    gap: 1rem;
+    color: #2575fc;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.Spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f0f4ff;
+    border-top: 5px solid #6a11cb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ErrorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    padding: 1rem 2rem;
+    max-width: 600px;
+    text-align: center;
+    background-color: #ffe6e6;
+    color: #d8000c;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 1px solid #d8000c;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(216, 0, 12, 0.15);
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
