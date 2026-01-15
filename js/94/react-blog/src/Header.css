@@ -1,0 +1,25 @@
+header {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header a {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2575fc;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header a:hover {
+    color: #6a11cb;
+    transform: translateY(-2px);
+}
