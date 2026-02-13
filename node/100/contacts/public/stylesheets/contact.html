@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Contacts by AJAX</title>
+        <style>
+            body {
+                font-family: Arial;
+                padding: 20px;
+            }
+
+            .contact {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 6px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Contacts</h1>
+
+        <div id="contacts"></div>
+
+        <script>
+
+            fetch('/api/contacts')
+                .then(res => res.json())
+                .then(data => {
+                    const container = document.getElementById('contacts');
+
+                    if (!data.length) {
+                        container.innerHTML = "<p>No contacts found.</p>";
+                        return;
+                    }
+
+                    data.forEach(c => {
+                        const div = document.createElement('div');
+                        div.className = 'contact';
+                        div.innerHTML = `
+                    <strong>${c.first} ${c.last}</strong><br>
+                    Phone: ${c.phone}<br>
+                    Email: ${c.email}
+                `;
+                        container.appendChild(div);
+                    });
+                })
+                .catch(err => {
+                    console.error("Error fetching contacts:", err);
+                });
+        </script>
+
+    </body>
+
+</html>
