@@ -17,10 +17,21 @@ let contacts = [
     email: 'jd@whitehouse.gov'
   }
 ];
+
 router.get('/api/contacts', (req, res, next) => {
   res.json(contacts);
 });
-/* GET home page. */
+
+router.get('/api/contacts/:id', (req, res, next) => {
+  const contact = contacts.find(c => c.id === Number(req.params.id));
+  if (contact) {
+    res.json(contact);
+  } else {
+    res.status(404).json({ error: "Contact not found" });
+  }
+});
+
+
 router.get('/', function (req, res, next) {
   res.render('layout', {
     title: 'Contact List',
