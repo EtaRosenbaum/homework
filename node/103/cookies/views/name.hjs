@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>{{ title }}</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+
+    <body>
+        <h1> Enter your name</h1>
+        <form action="/name" method="POST">
+            <label> Name: <input type="text" name="userName" placeholder="Your name"></label>
+            <button>Save</button>
+        </form>
+        <h2>Your saved name:{{name}}</h2>
+        <p>You have visited this site {{count}} times.</p>
+        <a href="/"> Go back home</a>
+    </body>
+
+</html>

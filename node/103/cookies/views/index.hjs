@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <p>Welcome {{name }}</p>
+    <p>you have visited this site {{count}} times.</p>
+    <a href="/name"> Enter your name</a>
+  </body>
+</html>
