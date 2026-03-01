@@ -1,0 +1,4 @@
+<div>
+    <h1>Your Name Is: {{ name }}</h1>
+    <a href="/">Go Back Home</a>
+</div>

@@ -1,0 +1,7 @@
+<form method="POST">
+  <h3>Enter your name</h3>
+  <label>
+    <input name="name">
+    <button>submit</button>
+  </label>
+</form>
