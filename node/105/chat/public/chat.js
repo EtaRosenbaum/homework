@@ -5,7 +5,7 @@ const socket = io();
 let userName = '';
 
 
-const nameForm = document.querySelector('#nameForm');
+
 
 const loginForm = document.querySelector('#loginForm');
 const messages = document.querySelector('#messages');
@@ -19,7 +19,6 @@ const usernameInput = document.querySelector('#usernameInput');
 loginForm.addEventListener('submit', e => {
   e.preventDefault();
 
-  const usernameInput = document.querySelector('#usernameInput');
 
   username = usernameInput.value;
   if (!username) return;
@@ -28,7 +27,7 @@ loginForm.addEventListener('submit', e => {
 
   loginForm.style.display = "none";
 
-  document.querySelector('#messages').style.display = "block";
+  messages.style.display = "block";
   messages.style.display = "block";
   messageForm.style.display = "block";
 });
