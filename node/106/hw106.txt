@@ -1,0 +1,203 @@
+
+13 stuff>use shopTest
+switched to db shopTest
+14 shopTest>db.users.insertMany([
+|   {
+|     _id: 1,
+|     name: "Alice Johnson",
+|     email: "alice@example.com",
+|     age: 28,
+|     address: { city: "New York", zip: "10001" },
+|     joined: new Date("2022-01-15")
+|   },
+|   {
+|     _id: 2,
+|     name: "Bob Smith",
+|     email: "bob@example.com",
+|     age: 35,
+|     address: { city: "Los Angeles", zip: "90001" },
+|     joined: new Date("2021-09-10")
+|   },
+|   {
+|     _id: 3,
+|     name: "Charlie Lee",
+|     email: "charlie@example.com",
+|     age: 22,
+|     address: { city: "Chicago", zip: "60601" },
+|     joined: new Date("2023-03-01")
+|   }
+| ])
+{ acknowledged: true, insertedIds: { '0': 1, '1': 2, '2': 3 } }
+15 shopTest>db.products.insertMany([
+|   {
+|     _id: 101,
+|     name: "Wireless Mouse",
+|     category: "Electronics",
+|     price: 25.99,
+|     stock: 120
+|   },
+|   {
+|     _id: 102,
+|     name: "Bluetooth Headphones",
+|     category: "Electronics",
+|     price: 79.99,
+|     stock: 60
+|   },
+|   {
+|     _id: 103,
+|     name: "Coffee Mug",
+|     category: "Home",
+|     price: 9.99,
+|     stock: 200
+|   }
+| ])
+{ acknowledged: true, insertedIds: { '0': 101, '1': 102, '2': 103 } }
+16 shopTest>db.orders.insertMany([
+|   {
+|     _id: 1001,
+|     user_id: 1,
+|     products: [
+|       { product_id: 101, quantity: 2 },
+|       { product_id: 103, quantity: 1 }
+|     ],
+|     total: 61.97,
+|     status: "shipped",
+|     order_date: new Date("2023-07-10")
+|   },
+|   {
+|     _id: 1002,
+|     user_id: 2,
+|     products: [
+|       { product_id: 102, quantity: 1 }
+|     ],
+|     total: 79.99,
+|     status: "pending",
+|     order_date: new Date("2023-07-12")
+|   },
+|   {
+|     _id: 1003,
+|     user_id: 3,
+|     products: [
+|       { product_id: 103, quantity: 3 }
+|     ],
+|     total: 29.97,
+|     status: "delivered",
+|     order_date: new Date("2023-07-09")
+|   }
+| ])
+{
+  acknowledged: true,
+  insertedIds: { '0': 1001, '1': 1002, '2': 1003 }
+}
+
+
+
+28 orders>use test
+switched to db test
+
+30 test>db.stuff.insertMany([
+|   { "id": 1, "year": 2018, "title": "Alpha", "value": 42 },
+|   { "id": 2, "year": 2019, "title": "Beta", "value": 67 },
+|   { "id": 3, "year": 2020, "title": "Gamma", "value": 15 },
+|   { "id": 4, "year": 2021, "title": "Delta", "value": 89 },
+|   { "id": 5, "year": 2022, "title": "Epsilon", "value": 34 },
+|   { "id": 6, "year": 2023, "title": "Zeta", "value": 73 },
+|   { "id": 7, "year": 2024, "title": "Eta", "value": 58 },
+|   { "id": 8, "year": 2025, "title": "Theta", "value": 21 }
+| ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69b0ce9111cf1b86847c2908'),
+    '1': ObjectId('69b0ce9111cf1b86847c2909'),
+    '2': ObjectId('69b0ce9111cf1b86847c290a'),
+    '3': ObjectId('69b0ce9111cf1b86847c290b'),
+    '4': ObjectId('69b0ce9111cf1b86847c290c'),
+    '5': ObjectId('69b0ce9111cf1b86847c290d'),
+    '6': ObjectId('69b0ce9111cf1b86847c290e'),
+    '7': ObjectId('69b0ce9111cf1b86847c290f')
+  }
+}
+31 test>db.stuff.find({ year: 2022 })
+[
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c290c'),
+    id: 5,
+    year: 2022,
+    title: 'Epsilon',
+    value: 34
+  }
+]
+32 test>db.stuff.find({ year: 2023, title: "Zeta" })
+[
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c290d'),
+    id: 6,
+    year: 2023,
+    title: 'Zeta',
+    value: 73
+  }
+]
+34 test>db.stuff.find({ year: 2023 }, { title: 1, value: 1 })
+[
+  { _id: ObjectId('69b0ce9111cf1b86847c290d'), title: 'Zeta', value: 73 }
+]
+35 test>db.stuff.find().sort({ year: -1 })
+[
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c290f'),
+    id: 8,
+    year: 2025,
+    title: 'Theta',
+    value: 21
+  },
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c290e'),
+    id: 7,
+    year: 2024,
+    title: 'Eta',
+    value: 58
+  },
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c290d'),
+    id: 6,
+    year: 2023,
+    title: 'Zeta',
+    value: 73
+  },
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c290c'),
+    id: 5,
+    year: 2022,
+    title: 'Epsilon',
+    value: 34
+  },
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c290b'),
+    id: 4,
+    year: 2021,
+    title: 'Delta',
+    value: 89
+  },
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c290a'),
+    id: 3,
+    year: 2020,
+    title: 'Gamma',
+    value: 15
+  },
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c2909'),
+    id: 2,
+    year: 2019,
+    title: 'Beta',
+    value: 67
+  },
+  {
+    _id: ObjectId('69b0ce9111cf1b86847c2908'),
+    id: 1,
+    year: 2018,
+    title: 'Alpha',
+    value: 42
+  }
+]
